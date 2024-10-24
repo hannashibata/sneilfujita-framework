@@ -27,3 +27,31 @@ toggleMenuLinks.forEach((el) => {
     toggleMenu.setAttribute('data-menustate','closed');
   }
 });
+
+// ON SCROLL ANIMATION
+// Change active state for all elements with class="observe-me"
+const myobserver = new IntersectionObserver((entries) => {
+
+  // look throught all entries
+  entries.forEach((entry) => {
+    
+    // if each is in view, set it to active, else innactive
+    if (entry.isIntersecting) {
+      entry.target.setAttribute("data-viewstate", "active");
+    } else {
+      entry.target.setAttribute("data-viewstate", "inactive");
+    };
+    
+  });
+  
+  
+});
+
+
+const mytargets = document.querySelectorAll('.observe-me');
+mytargets.forEach((el) => {
+  
+    // sobserve every target
+  myobserver.observe(el);
+  
+});

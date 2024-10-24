@@ -657,3 +657,34 @@ section {
 html {
     scroll-behavior: smooth;
 }
+
+/* SCROLL TRIGGERED ANIMATION
+ * corresponding with JS
+ */
+
+.observe-me {
+    opacity: 0;
+    transition: all 1s ease-out 0.5s;
+   
+    &[data-viewstate="active"] {
+    opacity: 1;
+    }
+}
+
+.animate-from-upperleft {
+    translate: -20px -50px;
+
+    &[data-viewstate="active"] {
+    translate: 0 0;
+    }
+}
+
+.animate-from-bottomright {
+    translate: 20px 50px;
+    transition-delay: 1s;
+
+    &[data-viewstate="active"] {
+    translate: 0 0;
+    }
+}
+  
