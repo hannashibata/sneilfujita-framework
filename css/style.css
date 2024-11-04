@@ -121,9 +121,12 @@ h1, h2, h3 {
 }
 
 a {
+    text-decoration: none;
     color: var(--color-a);
     &:hover {
         color: var(--color-a-hover);
+        font-family: var(--font-special);
+        font-size: 1.5em;
     }
 }
 
