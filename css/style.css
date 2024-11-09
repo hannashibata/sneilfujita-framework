@@ -60,7 +60,7 @@ CSS TABLE OF CONTENTS
     --color-text-headings: var(--color-black);
 
     --color-a: var(--color-primary);
-    --color-a-hover: darkblue;
+    --color-a-hover: varvar(--color-tertiary);
     --color-a-dark: blue;
     --color-a-darker: darkblue;
     --color-a-light: lightblue;
@@ -125,7 +125,7 @@ a {
     color: var(--color-a);
     &:hover {
         color: var(--color-a-hover);
-        font-family: var(--font-special);
+        /* font-family: var(--font-special); */
         font-size: 1.5em;
     }
 }
@@ -167,17 +167,15 @@ p {
     text-wrap: pretty;
 }
 
-/* GLOBAL MEDIA */
-
-/* MAKE ALL IMAGES SHRINK ON SMALL SCREENS */
+/* GLOBAL MEDIA
+ * Make all images shrink on small screens */
 img {
     max-width: 100%;
     height: auto; 
 }
 
-/* GLOBAL HELPERS */
-
-/* HIDE ELEMENTS VISUALLY BUT NOT FROM SCREEN READERS AND SEARCH ENGINES */
+/* GLOBAL HELPERS
+ * Hide elements visually but not from screen readers and search engines */
 .hide-visually {
     position: absolute;
     top: -9999px;
