@@ -880,10 +880,6 @@ html {
 .hero:has(.sub-home-hero) {
     padding: 0;
 }
-.sub-home-hero {
-    /* padding-left: 100px; */
-    
-}
 
 .rotated-header {
     --site-header-height: 60px;
@@ -903,11 +899,36 @@ html {
     display: flex;
     list-style: none;
     margin: 0;
-  }
+}
   
-  .site-header li {
+.site-header li {
     margin-left: 1em;
-  }
+}
+
+.credit {
+    font-size: 75%;
+    font-family: var(--font-heading);
+}
+
+/* #works:has(.row) {
+    border: 2px solid red;
+} */
+
+.works-cca,
+.works-sentinel,
+.works-jazz,
+.works-books {
+    /* border: 2px solid red; */
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.works-sentinel,
+.works-books {
+    background-color: var(--color-black);
+}
+
 
 
 /* DEMO ONLY */
