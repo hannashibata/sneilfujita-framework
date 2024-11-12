@@ -56,8 +56,10 @@ CSS TABLE OF CONTENTS
     --color-white: #E9E7DA;
 
     --color-body-bg: var(--color-white);
-    --color-text-body: var(--color-black);
-    --color-text-headings: var(--color-black);
+    --color-text-body-black: var(--color-black);
+    --color-text-body-white: var(--color-white);
+    --color-text-headings-black: var(--color-black);
+    --color-text-headings-white: var(--color-white);
 
     --color-a: var(--color-primary);
     --color-a-hover: varvar(--color-tertiary);
@@ -69,8 +71,9 @@ CSS TABLE OF CONTENTS
     --color-siteheader-bg: transparent;
     --color-siteheader-a: var(--color-text-headings);
     
-    --color-dark-hero-bg: var(--color-black);
-    --color-light-hero-bg: var(--color-white);
+    --color-dark-bg: var(--color-black);
+    --color-color-bg: var(--color-tertiary);
+    --color-light-bg: var(--color-white);
 
     --color-light-hero-headings: var(--color-white);
     --color-light-hero-text: var(--color-white);
@@ -103,20 +106,19 @@ CSS TABLE OF CONTENTS
 * { box-sizing: border-box; }
 body { margin: 0; }
 
-
 /* GLOBAL COLORS
  * Set the color of the main body backround.
  * Set the color of the main body text, all headings H1, text links & hover states, etc.
 */
 
 body {
-    background-color: var(--color-body-bg);
-    color: var(--color-text-body);
+    background-color: var(--color-light-bg);
+    color: var(--color-text-body-black);
 }
 
 h1, h2, h3 {
 
-    color: var(--color-text-headings);
+    /* color: var(--color-text-headings-black); */
     font-weight: 900;
 }
 
@@ -528,7 +530,7 @@ body {
 
     /* SET SITE HEADER LINK COLOR ON LARGE SCREENS */
 
-    --color-siteheader-a: var(--color-hero-headings);
+    --color-siteheader-a: var(--color-hero--black);
     a {
         color: var(--color-siteheader-a);
     }
@@ -581,6 +583,7 @@ section {
 
     h1, h2, h3 {
         color: var(--color-sitefooter-headings);
+        text-align: right;
     }
 
     a{
@@ -682,7 +685,7 @@ html {
 }
 
 .animate-from-top {
-    translate: 10px -10px;
+    translate: 0 -10px;
 
     &[data-viewstate="active"] {
     translate: 0 0;
@@ -920,22 +923,42 @@ html {
 .works-books {
     /* border: 2px solid red; */
     height: 100vh;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center;
+    align-items: center; */
+
+    display: block;
+    margin: auto;
+    /* QUESTION: why is not centering? */
 }
 
 .works-sentinel,
 .works-books {
-    background-color: var(--color-black);
+    background-color: var(--color-dark-bg);
+    /* color: var(--color-white); */
+
+    h1, h2, h3, p {
+        color: var(--color-white);
+    }
+
+    /* why is the color inherited from the global? */
+}
+
+.works-jazz {
+    background-color: var(--color-tertiary);
 }
 
 
 
+
 /* DEMO ONLY */
-body * {
+/* body * {
     background-color: rgb(0 0 0 /0.05);
     border: 1px solid rgb(0 0 0 /0.1);
     color: rgb(0 0 0 /0.5);
+} */
+
+body * {
+    border: 1px solid red;
 }
 
 .home-hero-grid-item {
