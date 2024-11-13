@@ -63,10 +63,8 @@ CSS TABLE OF CONTENTS
 
     --color-a: var(--color-primary);
     --color-a-hover: varvar(--color-tertiary);
-    --color-a-dark: blue;
-    --color-a-darker: darkblue;
-    --color-a-light: lightblue;
-    --color-a-lighter: rgb(255 255 255 / 1);
+    --color-a-dark: var(--color-black);
+    --color-a-light: var(--color-white);
     
     --color-siteheader-bg: transparent;
     --color-siteheader-a: var(--color-text-headings);
@@ -124,10 +122,10 @@ h1, h2, h3 {
 
 a {
     text-decoration: none;
-    color: var(--color-a);
+    color: var(--color-a-dark);
     &:hover {
         color: var(--color-a-hover);
-        /* font-family: var(--font-special); */
+        font-family: var(--font-special);
         font-size: 1.5em;
     }
 }
@@ -247,22 +245,21 @@ body {
 
 @media (min-width: 768px) {
 
+    /* Create grid in 12 columns, with equal fractions */
     .row {
-        /* - Create grid in 12 columns, with equal fractions */
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         gap: var(--gridgap);
     }
 
-    /* COMMONLY USED SEMANTIC COLUMN WIDTHS
-       - Setting size for each grid */
+    /* Commonly ysed semantic column widths & Setting size for each grid */
     .one-half { grid-column: auto / span 6; }
     .one-third { grid-column: auto / span 4; }
     .two-thirds { grid-column: auto / span 8; }
     .one-fourth { grid-column: auto / span 3; }
     .three-fourths { grid-column: auto / span 9; }
 
-    /* - 12 Column Classes */
+    /* 12 Column Classes: how many columns to overlap */
     .col-1 {grid-column: auto / span 1; }
     .col-2 {grid-column: auto / span 2; }
     .col-3 {grid-column: auto / span 3; }
@@ -276,12 +273,12 @@ body {
     .col-11 {grid-column: auto / span 11; }
     .col-12 {grid-column: auto / span 12; }
 
-    /*  - Centered columns */
+    /* Centered columns */
     .one-half.centered {grid-column: 4 / span 6; }
     .one-third.centered {grid-column: 5 / span 4; } 
     .two-thirds.centered {grid-column: 3 / span 8; } 
 
-    /* - Pushes */
+    /* Pushes: which column to start */
     .push-1 { grid-column-start: 2; }
     .push-2 { grid-column-start: 3; }
     .push-3 { grid-column-start: 4; }
@@ -386,8 +383,8 @@ body {
 
 .toggle-menu {
 
-    --color-togglemenu-bg: black;
-    --color-togglemenu-text: white;
+    --color-togglemenu-bg: var(--color-black);
+    --color-togglemenu-text: var(--color-white);
 
     display: flex;
     flex-direction: row-reverse;
@@ -909,6 +906,7 @@ html {
 }
 
 .credit {
+    /* QUESTION: Why is not being pushed? */
     font-size: 75%;
     font-family: var(--font-heading);
 }
@@ -921,14 +919,15 @@ html {
 .works-sentinel,
 .works-jazz,
 .works-books {
-    /* border: 2px solid red; */
-    height: 100vh;
-    /* justify-content: center;
-    align-items: center; */
+    /* Centering the child (row): sections are the grandparents */
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
 
-    display: block;
-    margin: auto;
-    /* QUESTION: why is not centering? */
+    /* Centering the columns(grandchild) */
+    .row {
+        align-items: center;
+    }
 }
 
 .works-sentinel,
@@ -957,11 +956,11 @@ html {
     color: rgb(0 0 0 /0.5);
 } */
 
-body * {
+/* body * {
     border: 1px solid red;
 }
 
 .home-hero-grid-item {
     border: 2px solid blue;
     background-color: skyblue;
-}
+} */
