@@ -85,7 +85,7 @@ CSS TABLE OF CONTENTS
 
     /*  DEFINE ALL FONTS USED HERE */
     --font-body: 'Helvetica', system-ui, Arial, sans-serif;
-    --font-heading: 'Besley', Georgia, serif;
+    --font-sans-serif: 'Besley', Georgia, serif;
     --font-special: 'Corleone Due';
 
     /* SIZING UNITS */
@@ -143,7 +143,7 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: var(--font-heading);
+    font-family: var(--font-sans-serif);
     margin: .4em 0;
 }
 
@@ -575,24 +575,39 @@ section {
     background-color: var(--color-sitefooter-bg);
     color: var(--color-sitefooter-text);
 
+    /* Centering the item */
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+
     /* ADD SOME GENERAL PADDING AROUND THE FOOTER */
     padding: var(--unit-small);
 
     h1, h2, h3 {
+        font-family: var(--font-special);
+        font-weight: normal;
+        font-size: 4em;
+        line-height: 0.9;
         color: var(--color-sitefooter-headings);
         text-align: right;
+        margin: 0;
+        padding:0;
     }
+
+    /* p {
+        font-family: var(--font-sans-serif);
+    } */
 
     a{
         color: var(--color-sitefooter-a);
     }
-
 
     .site-footer-nav {
         ul {
             list-style: none;
             margin: 0;
             padding:0;
+            font-size: 2.7em;
         }
     }
 
@@ -787,6 +802,13 @@ html {
     grid-template-rows: 30% 2% 2% 18% 24% 2% 10% 12%;
 }
 
+.home-hero-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
 .home-hero-grid-item.red-bg {
     /*  NOTE: grid items read children's size and not parent  */
     margin: 1vh 1vw;
@@ -797,6 +819,8 @@ html {
     background-color: var(--color-red);
     grid-column: 1 / 5;
     grid-row: 1 / 5;
+
+     /* QUESTION: How can I not show the backgorund color? */
     clip-path: polygon(0 0, 93% 0, 100% 83%, 13% 92%);
 }
 
@@ -863,6 +887,17 @@ html {
 }
   
 
+.bierut {
+    clip-path: polygon(0 20%, 100% 0, 100% 50%, 3% 100%);
+}
+
+#about .row > * {
+    margin-top: 0;
+    margin-bottom: 0;
+
+}
+
+
 /* CUSTOM STYLING FOR SUBPAGES */
 /* Selected Works page */
 .page-works .hero {
@@ -906,14 +941,9 @@ html {
 }
 
 .credit {
-    /* QUESTION: Why is not being pushed? */
     font-size: 75%;
     font-family: var(--font-heading);
 }
-
-/* #works:has(.row) {
-    border: 2px solid red;
-} */
 
 .works-cca,
 .works-sentinel,
@@ -935,11 +965,9 @@ html {
     background-color: var(--color-dark-bg);
     /* color: var(--color-white); */
 
-    h1, h2, h3, p {
+    h1, h2, h3, h4, p {
         color: var(--color-white);
     }
-
-    /* why is the color inherited from the global? */
 }
 
 .works-jazz {
@@ -956,11 +984,11 @@ html {
     color: rgb(0 0 0 /0.5);
 } */
 
-/* body * {
+body * {
     border: 1px solid red;
 }
 
 .home-hero-grid-item {
     border: 2px solid blue;
-    background-color: skyblue;
-} */
+    background-color: var(--color-primary);
+}
