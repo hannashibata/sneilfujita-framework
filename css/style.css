@@ -142,9 +142,13 @@ body {
     line-height: 1.4;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: var(--font-sans-serif);
     margin: .4em 0;
+}
+
+h1, h2, h3 {
+    font-weight: 900;
 }
 
 h1 {
@@ -162,7 +166,22 @@ h3 {
     line-height: 1.3;
 }
 
+h4 {
+    font-size: 1.2em;
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+h5 {
+    font-family: var(--font-body);
+    font-size: 1.1em;
+    line-height: 1.3;
+}
+
 p {
+
+    font-size: .75em;
+    line-height: 1.4;
     max-width: 65ch;
     text-wrap: pretty;
 }
@@ -540,12 +559,6 @@ body {
 }
 
 
-
-/* SITE MAIN */
-/* .site-main {
-
-} */
-
 /* SECTIONS */
 section {
     padding: var(--unit-large) var(--unit-small);
@@ -564,10 +577,6 @@ section {
         line-height: 1;
         text-wrap: balance;
     }
-
-    /* h1, h2, h3 {
-        color: var(--color-hero-headings);
-    } */
 }
 
 /* SITE FOOTER */
@@ -587,16 +596,17 @@ section {
         font-family: var(--font-special);
         font-weight: normal;
         font-size: 4em;
-        line-height: 0.9;
+        line-height: 0.8;
         color: var(--color-sitefooter-headings);
         text-align: right;
         margin: 0;
         padding:0;
     }
 
-    /* p {
+    h5 {
         font-family: var(--font-sans-serif);
-    } */
+        font-weight: 400;
+    }
 
     a{
         color: var(--color-sitefooter-a);
@@ -897,6 +907,10 @@ html {
 
 }
 
+#about h2 {
+    font-style: uppercase;
+}
+
 
 /* CUSTOM STYLING FOR SUBPAGES */
 /* Selected Works page */
@@ -942,7 +956,8 @@ html {
 
 .credit {
     font-size: 75%;
-    font-family: var(--font-heading);
+    font-family: var(--font-sans-serif);
+    font-weight: 400;
 }
 
 .works-cca,
@@ -984,11 +999,11 @@ html {
     color: rgb(0 0 0 /0.5);
 } */
 
-body * {
+/* body * {
     border: 1px solid red;
-}
+} */
 
-.home-hero-grid-item {
+/* .home-hero-grid-item {
     border: 2px solid blue;
     background-color: var(--color-primary);
-}
+} */
