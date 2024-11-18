@@ -1,5 +1,5 @@
-/* ----------------------
--------------------------
+/* -----------------------------------------------
+--------------------------------------------------
 
 CSS TABLE OF CONTENTS
 
@@ -36,12 +36,12 @@ CSS TABLE OF CONTENTS
 
 # CUSTOM STYLING
 
--------------------------
----------------------- */
+--------------------------------------------------
+-------------------------------------------------- */
 
-/* -------------------- */
-/* --  GLOBAL STYLES -- */
-/* -------------------- */
+/* ----------------------------------------------- */
+/* GLOBAL STYLES  */
+/* ----------------------------------------------- */
 
 /* GLOBAL VARIABLES */
 
@@ -210,9 +210,9 @@ img {
 }
 
 
-/* ------------------- */
-/* -----  LAYOUT ----- */
-/* ------------------- */
+/* ----------------------------------------------- */
+/* LAYOUT */
+/* ----------------------------------------------- */
 
 /* RESPONSIVE TYPOGRAPHY VIA MEDIA QUERIES */
 
@@ -323,9 +323,9 @@ body {
     text-align: center;
 }
 
-/* ------------------- */
-/* -  SITE STRUCTURE - */
-/* ------------------- */
+/* ----------------------------------------------- */
+/* SITE STRUCTURE  */
+/* ----------------------------------------------- */
 
 /* SITE HEADER */
 .site-header {
@@ -393,7 +393,8 @@ body {
 
 }
 
-/* TOGGLE MENU */
+/* TOGGLE MENU
+----------------------------------------------- */
 
 /*HIDE MENU BUTTON IF NOT USING TOGGLE MENU  */
 .site-menu-button {
@@ -558,8 +559,8 @@ body {
 
 }
 
-
-/* SECTIONS */
+/* SECTIONS
+----------------------------------------------- */
 section {
     padding: var(--unit-large) var(--unit-small);
 }
@@ -579,7 +580,8 @@ section {
     }
 }
 
-/* SITE FOOTER */
+/* SITE FOOTER
+----------------------------------------------- */
 .site-footer {
     background-color: var(--color-sitefooter-bg);
     color: var(--color-sitefooter-text);
@@ -623,9 +625,9 @@ section {
 
 }
 
-/* -------------------- */
-/* --  UI COMPONENTS -- */
-/* -------------------- */
+/* ----------------------------------------------- */
+/* UI COMPONENTS */
+/* ----------------------------------------------- */
 
 /* BUTTONS */
 .button {
@@ -684,9 +686,9 @@ section {
 
 
 
-/* -------------------- */
-/* --    ANIMATION   -- */
-/* -------------------- */
+/* ----------------------------------------------- */
+/* ANIMATION */
+/* ----------------------------------------------- */
 
 /* ADD SUPPORT FOR SMOOTH SCROLLING */
 html {
@@ -786,9 +788,9 @@ html {
 }
   
 
-/* -------------------- */
-/* -- CUSTOM STYLING -- */
-/* -------------------- */
+/* ----------------------------------------------- */
+/* CUSTOM STYLING */
+/* ----------------------------------------------- */
 
 /* CUSTOM TYPEFACE FOR HEADER */
 .site-header h1 {
@@ -796,13 +798,14 @@ html {
 }
 
 /* HOME
+-----------------------------------------------
  * Home animated nav
  * Grid system
  */
 
- .red-bg {
+.red-bg {
     background-color: var(--color-primary);
- }
+}
 
 .home-hero-grid {
     display: grid;
@@ -912,23 +915,12 @@ html {
 }
 
 
-/* CUSTOM STYLING FOR SUBPAGES */
-/* Selected Works page */
-.page-works .hero {
-    position: relative;
-}
-
-.page-works .text-wrapper {
-    position: absolute;
-    top: 35%;
-    left: 27%;
-    width: 30%;
-}
-
-
-.hero:has(.sub-home-hero) {
-    padding: 0;
-}
+/* CUSTOM STYLING FOR SUBPAGES
+-----------------------------------------------
+ * Common styling for two subpages 
+ * Rotated header
+ * Credits for artowrk
+ */
 
 .rotated-header {
     --site-header-height: 60px;
@@ -960,6 +952,22 @@ html {
     font-weight: 400;
 }
 
+/* SELECTED WORKS PAGE */
+.page-works .hero {
+    position: relative;
+}
+
+.page-works .text-wrapper {
+    position: absolute;
+    top: 35%;
+    left: 27%;
+    width: 30%;
+}
+
+.hero:has(.sub-home-hero) {
+    padding: 0;
+}
+
 .works-cca,
 .works-sentinel,
 .works-jazz,
@@ -989,7 +997,142 @@ html {
     background-color: var(--color-tertiary);
 }
 
+/* TIMELINE PAGE */
 
+/* HERO
+/* ----------------------------------------------- */
+.page-timeline .hero {
+height: 100svh;
+background-color: var(--color-black);
+color: var(--color-white);
+padding: auto;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.page-timeline .site-menu {
+    color: var(--color-white);
+}
+
+/* TIMELINE
+/* ----------------------------------------------- */
+#timeline ul {
+/* background-color: var(--color-white); */
+padding: 50px 0;
+}
+
+/* this is the line */
+#timeline ul li {
+list-style: none;
+position: relative;
+
+/* this is the width of center line */
+width: 2px;
+
+margin: 0 auto;
+padding-top: 3em;
+background-color: var(--color-black);
+}
+
+/* elipse on the timeline line */
+#timeline ul li::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: 0;
+transform: translateX(-50%);
+width: 10px;
+height: 10px;
+border-radius: 50%;
+
+/*  this vizualize the elipse  */
+background-color: inherit;
+z-index: 1;
+}
+
+#timeline ul li div {
+/*  border: 2px solid blue; */
+position: relative;
+bottom: 0;
+width: 400px;
+padding: 1em;
+background: var(--color-primary);
+}
+
+/* positioning for 吹き出しの出っ張ってる部分 */
+#timeline ul li div::before {
+content: "";
+position: absolute;
+bottom: 7px;
+width: 0;
+height: 0;
+border-style: solid;
+}
+
+#timeline ul li:nth-child(odd) div {
+left: 45px;
+}
+
+/* 吹き出しの出っ張ってる部分、oddのみ */
+#timeline ul li:nth-child(odd) div::before {
+left: -15px;
+border-width: 8px 16px 8px 0;
+border-color: transparent var(--color-primary) transparent transparent;
+}
+
+#timeline ul li:nth-child(even) div {
+left: -439px;
+}
+
+/* 吹き出しの出っ張ってる部分、evenのみ */
+#timeline ul li:nth-child(even) div::before {
+right: -15px;
+border-width: 8px 0 8px 16px;
+border-color: transparent transparent transparent var(--color-primary);
+}
+
+time {
+display: block;
+font-size: 1.5em;
+font-weight: bold;
+margin-bottom: 0.2em;
+}
+
+/* Media queries for timeline
+-------------------------------------------------- */
+
+@media screen and (max-width: 900px) {
+#timeline ul li div {
+    width: 250px;
+}
+
+#timeline ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+}
+}
+
+@media screen and (max-width: 600px) {
+    #timeline ul li {
+    margin-left: 20px;
+}
+
+#timeline ul li div {
+    width: calc(100vw - 91px);
+}
+
+#timeline ul li:nth-child(even) div {
+    left: 45px;
+}
+
+#timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--color-primary) transparent transparent;
+}
+}
 
 
 /* DEMO ONLY */
